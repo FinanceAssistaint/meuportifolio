@@ -1,0 +1,235 @@
+/* styles.css - Versão Final Unificada */
+
+/* 1. Variáveis e Reset */
+:root {
+    --cor-primaria: #3498db;
+    --cor-secundaria: #2c3e50;
+    --cor-destaque: #e74c3c;
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #333333;
+    --cor-fundo-claro: #f9f9f9;
+    --cor-fundo-escuro: #333333;
+    --sombra-padrao: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --borda-radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* 2. Estilos Globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto-escuro);
+    background: var(--cor-fundo-claro);
+    overflow-x: hidden;
+}
+
+/* 3. Cabeçalho */
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-texto-claro);
+    box-shadow: var(--sombra-padrao);
+    position: relative;
+    padding: 1.5rem 0;
+}
+
+/* 4. Conteúdo Principal */
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+section {
+    background: var(--cor-texto-claro);
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra-padrao);
+    margin: 2rem 0;
+    padding: 2.5rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--cor-primaria);
+    position: absolute;
+    bottom: 0;
+}
+
+/* 5. Componentes Específicos */
+.projeto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.projeto {
+    background: var(--cor-texto-claro);
+    padding: 2rem;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra-padrao);
+    transition: transform 0.3s;
+}
+
+.projeto:hover {
+    transform: translateY(-10px);
+}
+
+.destaque-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.destaque-list li {
+    padding: 1.2rem;
+    margin: 1rem 0;
+    background: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-radius: calc(var(--borda-radius) / 2);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* 6. Botões e Links */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-radius: var(--borda-radius);
+    text-decoration: none;
+    font-weight: 600;
+    gap: 1rem;
+}
+
+.cta-button:hover {
+    background: var(--cor-secundaria);
+    transform: scale(1.05);
+}
+
+/* 7. Rodapé */
+footer {
+    background: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--cor-texto-claro);
+    font-size: 1.8rem;
+    opacity: 0.9;
+}
+
+/* 8. Tema Escuro */
+body.dark-theme {
+    background: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+}
+
+body.dark-theme section {
+    background: #2a2a2a;
+}
+
+body.dark-theme .projeto {
+    background: #333;
+}
+
+body.dark-theme h2 {
+    color: var(--cor-primaria);
+}
+
+body.dark-theme .destaque-list li {
+    background: var(--cor-secundaria);
+}
+
+/* 9. Responsividade */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* 10. Animações AOS */
+[data-aos] {
+    transition: opacity 0.8s, transform 0.8s !important;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+[data-aos="fade-down"] {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+[data-aos="zoom-in"] {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.aos-animate {
+    transform: none !important;
+    opacity: 1 !important;
+}

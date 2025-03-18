@@ -1,0 +1,488 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis de cores */
+:root {
+    --cor-primaria: #3498db;         /* Azul vibrante */
+    --cor-secundaria: #2c3e50;       /* Azul escuro */
+    --cor-destaque: #e74c3c;         /* Vermelho coral */
+    --cor-texto-claro: #ffffff;      /* Texto branco */
+    --cor-texto-escuro: #333333;     /* Texto escuro */
+    --cor-fundo-claro: #f9f9f9;      /* Fundo claro */
+    --cor-fundo-escuro: #333333;     /* Fundo escuro */
+}
+
+/* Estilos globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+}
+
+/* Cabeçalho com gradiente */
+header {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-texto-claro);
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+body.dark-theme header {
+    background: linear-gradient(135deg, var(--cor-secundaria), #34495e);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--cor-texto-claro);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-texto-claro);
+    opacity: 1 !important;
+}
+
+body.dark-theme nav ul li a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: flex; /* Exibe o ícone em todas as telas */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    color: var(--cor-texto-claro);
+    font-size: 2rem;
+}
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: var(--cor-secundaria);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000; /* Adicione isso para garantir que o menu fique acima de outros elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destaque */
+}
+
+.show-menu {
+    display: flex !important; /* Força a exibição mesmo se houver conflitos */
+}
+
+.mobile-nav a {
+    color: var(--cor-texto-claro);
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.mobile-nav a:hover {
+    background: var(--cor-primaria);
+}
+
+.show-menu {
+    display: flex; /* Exibe o menu mobile quando a classe é adicionada */
+}
+
+/* Oculta o menu desktop em todas as telas */
+nav ul {
+    display: none;
+}
+/* Responsividade do Menu */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Oculta o menu desktop em telas pequenas */
+    }
+    .menu-toggle {
+        display: flex; /* Exibe o ícone de hambúrguer em telas pequenas */
+    }
+}
+/* Switch de tema */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d3d3d3;
+    transition: 0.4s;
+    border: 2px solid transparent;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+    background-color: var(--cor-secundaria);
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+body.dark-theme .slider {
+    background-color: #34495e;
+    border-color: var(--cor-secundaria);
+}
+
+body.dark-theme input:checked + .slider {
+    background-color: var(--cor-primaria);
+}
+
+body.dark-theme .slider:before {
+    background-color: #ecf0f1;
+}
+
+/* Seções */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Seção Sobre */
+#sobre {
+    background-color: var(--cor-texto-claro);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme #sobre {
+    background-color: #444;
+    color: var(--cor-texto-claro);
+}
+
+#sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--cor-texto-escuro);
+    transition: color 0.3s;
+}
+
+body.dark-theme #sobre h2 {
+    color: var(--cor-texto-claro);
+}
+
+#sobre p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #666;
+    transition: color 0.3s;
+}
+
+body.dark-theme #sobre p {
+    color: #ccc;
+}
+
+/* Seção de Livros */
+.livro-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.livro-card {
+    background: var(--cor-texto-claro);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.livro-card:hover {
+    transform: translateY(-5px);
+}
+
+.livro-capa img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--cor-primaria);
+}
+
+.livro-info {
+    padding: 20px;
+}
+
+.livro-autor {
+    color: var(--cor-secundaria);
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.livro-ano {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.livro-descricao {
+    color: #444;
+    margin: 15px 0;
+    font-size: 0.95rem;
+}
+
+.livro-botao {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.livro-botao:hover {
+    background: var(--cor-secundaria);
+}
+
+/* Modo Escuro para Livros */
+body.dark-theme .livro-card {
+    background: #444;
+}
+
+body.dark-theme .livro-descricao {
+    color: #ccc;
+}
+
+body.dark-theme .livro-ano {
+    color: #999;
+}
+
+/* Botão de chamada à ação */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    background: #2980b9;
+}
+
+body.dark-theme .cta-button {
+    background: var(--cor-secundaria);
+    color: #ecf0f1;
+}
+
+body.dark-theme .cta-button:hover {
+    background: #34495e;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme footer {
+    background-color: #444;
+    color: var(--cor-texto-claro);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Botão de Voltar ao Topo */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #2980b9;
+}
+
+body.dark-theme #back-to-top {
+    background-color: var(--cor-secundaria);
+    color: #ecf0f1;
+}
+
+body.dark-theme #back-to-top:hover {
+    background-color: #34495e;
+}
+
+/* Projetos */
+.projeto-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.projeto {
+    background: var(--cor-texto-claro);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(33.333% - 40px);
+    margin-bottom: 20px;
+}
+
+.projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.projeto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--cor-texto-escuro);
+}
+
+.projeto p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.projeto a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.projeto a:hover {
+    background: var(--cor-secundaria);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .projeto {
+        width: calc(50% - 20px);
+    }
+    .livro-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .projeto {
+        width: 100%;
+    }
+}

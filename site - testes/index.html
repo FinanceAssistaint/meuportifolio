@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Lucas da Silva Bido, estudante de Ciências Contábeis e Auxiliar de Contabilidade e Controladoria na Vic Pharma By Schülke.">
+    <meta name="keywords" content="portfólio, contabilidade, projetos, Lucas Bido">
+    <meta name="author" content="Lucas da Silva Bido">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Adicione a biblioteca AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <title>Meu Portfólio</title>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-content">
+            <h1 data-aos="fade-down">Meu Portfólio</h1> <!-- Animação no título -->
+            
+    <!-- Botão do Menu Hambúrguer -->
+<button id="menu-toggle" class="hamburger" data-aos="fade-left">
+    &#9776; <!-- Ícone de hambúrguer -->
+</button>
+
+<!-- Menu Mobile -->
+<div class="mobile-nav">
+    <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#livros">Livros</a></li>
+    </ul>
+</div>
+            
+            <!-- Switch de Tema -->
+            <div class="theme-switch-wrapper" data-aos="fade-left"> <!-- Animação no switch -->
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" data-aos="fade-up"> <!-- Animação na seção -->
+        <div class="section-content">
+            <h2>Sobre Mim</h2>
+            <p>
+                Sou estudante de Ciências Contábeis e atuei como Auxiliar de Contabilidade e Controladoria na Vic Pharma By
+                Schülke. Busco estar sempre atualizado no mundo contábil, aprimorando meus conhecimentos para me tornar um
+                profissional altamente qualificado e preparado para os desafios da área.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos">
+        <div class="section-content">
+            <h2 data-aos="fade-right">Meus Projetos</h2> <!-- Animação no título -->
+            <div class="projeto-container">
+                <div class="projeto" data-aos="zoom-in"> <!-- Animação no card -->
+                    <h3>Projeto 1 - TCC Adm</h3>
+                    <p>Trabalho de Conclusão de Curso desenvolvido durante o curso técnico em Administração na ETEC Dr. Adail Nunes da Silva.</p>
+                    <a href="projetos/projeto1/projeto1.html" data-view-transition="projeto1" aria-label="Ver mais sobre Projeto 1">Ver mais</a>
+                </div>
+                <div class="projeto" data-aos="zoom-in" data-aos-delay="200"> <!-- Animação com delay -->
+                    <h3>Projeto 2 - Assistente Financeiro</h3>
+                    <p>Assistente Financeiro básico, ajuda a conciliar as movimentações diárias.</p>
+                    <a href="https://financeassistaint.github.io/cadastro.html" data-view-transition="projeto2" aria-label="Ver mais sobre Projeto 2">Ver mais</a>
+                </div>
+                <div class="projeto" data-aos="zoom-in" data-aos-delay="400"> <!-- Animação com delay -->
+                    <h3>Projeto 3 - TCC de RH</h3>
+                    <p>Trabalho de Conclusão de Curso desenvolvido durante o curso técnico em Recursos Huamnos.</p>
+                    <a href="projetos/projeto3/projeto3.html" data-view-transition="projeto3" aria-label="Ver mais sobre Projeto 3">Ver mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Seção de Livros -->
+<section id="livros" data-aos="fade-up">
+    <div class="section-content">
+        <h2>Livros Inspiradores</h2>
+        <p class="section-subtitle">Algumas obras que moldaram minha jornada profissional:</p>
+        
+        <div class="livro-container">
+            <!-- Card 1 -->
+            <div class="livro-card" data-aos="zoom-in">
+                <div class="livro-capa">
+                    <img src="imagens/artedeterrazão.jpg" alt="Capa do livro A Arte de Ter Razão">
+                </div>
+                <div class="livro-info">
+                    <h3>A Arte de Ter Razão</h3>
+                    <p class="livro-autor">Arthur Schopenhauer</p>
+                    <p class="livro-ano">Publicação: 1830</p>
+                    <p class="livro-descricao">Um tratado sobre argumentação e dialética.</p>
+                    <a href="https://amzn.to/3xyz123" target="_blank" class="livro-botao">
+                        Ver na Amazon <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="livro-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="livro-capa">
+                    <img src="imagens/o principe.jpg" alt="Capa do livro O Príncipe">
+                </div>
+                <div class="livro-info">
+                    <h3>O Príncipe</h3>
+                    <p class="livro-autor">Nicolau Maquiavel</p>
+                    <p class="livro-ano">Publicação: 1532</p>
+                    <p class="livro-descricao">Clássico sobre política e poder.</p>
+                    <a href="https://amzn.to/3xyz456" target="_blank" class="livro-botao">
+                        Ver na Amazon <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="livro-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="livro-capa">
+                    <img src="imagens/discursodometodo.jpg" alt="Capa do livro O Príncipe">
+                </div>
+                <div class="livro-info">
+                    <h3>Discurso do Método</h3>
+                    <p class="livro-autor">René Descartes</p>
+                    <p class="livro-ano">Publicação: 1637</p>
+                    <p class="livro-descricao">Fundamento racional do conhecimento e da dúvida..</p>
+                    <a href="https://amzn.to/3xyz456" target="_blank" class="livro-botao">
+                        Ver na Amazon <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Adicione mais livros seguindo o mesmo padrão -->
+        </div>
+    </div>
+</section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" data-aos="fade-up"> <!-- Animação na seção -->
+        <div class="section-content">
+            <h2><span class="highlight">&gt;</span> Contato</h2>
+            <p class="lead-text">
+                Quer entrar em contato? Preencha o formulário abaixo ou envie um e-mail para 
+                <a href="mailto:bidolucas123@outlook.com">bidolucas123@outlook.com</a>.
+            </p>
+            <a href="https://forms.office.com/r/G6Vp9LhPXd" target="_blank" class="cta-button" rel="noopener noreferrer" data-aos="zoom-in"> <!-- Animação no botão -->
+                <i class="fas fa-external-link-alt" aria-hidden="true" aria-label="Abrir formulário de contato"></i> Acessar Formulário de Contato
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Meu Portfólio | Todos os direitos reservados</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/lucasdasilvabido" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-label="LinkedIn"></i></a>
+            <a href="https://www.instagram.com/seu-usuario" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- Botão de Voltar ao Topo -->
+    <button id="back-to-top" title="Voltar ao topo">↑</button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- Adicione o script da AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,       // Duração da animação em milissegundos
+            offset: 120,          // Distância do topo para disparar a animação
+            easing: 'ease-in-out', // Tipo de suavização
+            once: false           // Repetir animação ao rolar de volta
+        });
+    </script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
